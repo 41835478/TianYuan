@@ -1,0 +1,35 @@
+.progressWrapper {width: 357px;overflow: hidden;}
+.progressContainer {margin-top:5px;padding: 4px;border: solid 1px #E8E8E8;background-color: #F7F7F7;overflow: hidden;}
+/* Message */
+.message {margin: 1em 0;padding: 10px 20px;border: solid 1px #FFDD99;background-color: #FFFFCC;overflow: hidden;}
+/* Error */
+.red {border: solid 1px #B50000;background-color: #FFEBEB;}
+/* Current */
+.green {border: solid 1px #DDF0DD;background-color: #EBFFEB;}
+/* Complete */
+.blue {border: solid 1px #CEE2F2;background-color: #F0F5FF;}
+.progressName {font-size: 9pt;font-weight: 700;color: #555;width: 323px;height: 14px;text-align: left;white-space: nowrap;overflow: hidden;}
+.progressBarInProgress,.progressBarComplete,.progressBarError {font-size: 0px;width: 0%;height: 2px;background-color: blue;margin-top: 2px;}
+.progressBarComplete {width: 100%;background-color: green;visibility: hidden;}
+.progressBarError {width: 100%;background-color: red;visibility: hidden;}
+.progressBarStatus {margin-top: 2px;width: 337px;font-size: 9pt;font-family: Arial;text-align: left;white-space: nowrap;}
+a.progressCancel {font-size: 0;display: block;height: 14px;width: 14px;float: right;}
+a.progressCancel:hover {background-position: 0px 0px;}
+/* -- SWFUpload Object Styles ------------------------------- */
+.swfupload {margin-top:5px;}
+#upload_btn_area{width:132px;height:164px;overflow:hidden;float:left;border:1px solid #d7e7f4;border-top:2px solid #CEE2F2;background:url(data:image/gif;base64,R0lGODlhggCCALMAAJWVlf///5mZmby8vPf396Wlpd7e3q+vsczMzObm5q2trdfX1/Hx8cXFxbW1tZ+foSH5BAAHAP8ALAAAAACCAIIAQAT/MMhJq7046827/2AojmRpnmiqruwFvHAsz3Rt33g+t3zv/8AUQ0AkMoLIZCZRxBUTyigroasCBFCpdmO4CaxWwzbaBZvPAPF47UDXHOs4p+2eweX4C70eu+f/Ent8L36AhoeIiYqLjI2Oj5CRko+DlZY5k5maIEw2WJtrnXVZoC1UlzWkpR8GTahgaqsUBLS1treCgw63vLayH7l8hb8pwXXDxCfGbsjJzs/Q0dLT1NXW19jZ2tsnr96oct/ig9zlSQMAA+Y/6DPq68U6zfBzaPP0FMtm9+YOX94H6B0YJyOgtoEEbRicpiChFQXPGjpEAzGbPyKV+PVDpbGcvjMd77l93IfPwkgwIbedtJJS28oqLUvKnEmzps2bOHPq3Mmzp8+fQIMKHUq06JiJSHGES8p0R5ymUGEsjdrUqNWrWCfsylphAYwFXCUUkFGAAFavNcAWJTD2RtmhaHUgAMrWzFueCOrMzUngwaAHZm3mvbRXZl9vgEsi+PetcLnDCRNzG4zUsTXITCVXa1CEcdIG1Bj4pQrjwRFoDUjTAJ1MdGfVMUz/Sg37ButrFz0zs/lSHm/dx3hzFH4pJrbeOYzjHl4TOQ7l1pzfgF5Nug3q1Ky/IW4J+zTtNLxLA2+He8aw6NOrX8++vfv38OPLLxUBADs=) no-repeat center center #fff}
+.uploadbtn { width:100%;height:180px;float:left}
+.uploadbtn_no{width:114px;height:29px;background:url('./images/can_not_up_bg.gif') no-repeat;float:left}
+#thumbnails{width:740px;height:170px;overflow:hidden;border:1px solid #d7e7f4;padding:15px 0 15px 25px;background:#f9f9f9;}
+#thumbnails .u_single { width:120px;padding:5px;overflow:hidden;float:left;border:1px solid #d7e7f4;border-top:2px solid #CEE2F2;background-color:#F0F5FF;margin:0 12px 20px 0}
+#thumbnails .fcf_color{background-color:#ffccff}
+#thumbnails .u_single .top_img_z1{width:100%;height:120px;overflow:hidden;float:left}
+#thumbnails .u_single .top_img_z1 img {height:120px;overflow:hidden;cursor:move;}
+#thumbnails .u_single .opop {width:100%;height:30px;overflow:hidden;float:left;line-height:30px;padding-top:4px;}
+#thumbnails .u_single .opop label{float:left;height:30px;color:#666666;cursor:pointer;padding:0}
+#thumbnails .u_single .opop label input {float:left;height:20px;margin-top:5px}
+#thumbnails .u_single a {cursor:pointer;color:#0066CC;font-size:12px;}
+#thumbnails .u_single .opop a{float:right;height:30px;margin-left:10px;line-height:30px;}
+#thumbnails .u_single input.intro {width:115px;height:20px;float:left;font-size:12px;line-height:20px;color:#666666}
+.order_xts{width:400px;height:30px;float:right;font:100 12px '宋体';color:#666666;line-height:30px}
+.order_xts b{color:#f04545}

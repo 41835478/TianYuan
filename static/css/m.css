@@ -1,0 +1,30 @@
+/* CSS Document */
+body{margin:0;padding:0;padding-bottom:70px;}
+ul,ol{list-style:none}
+img{border:0}
+body{font-family:"Microsoft YaHei",Helvetica;font-size:14px;position:relative;}
+div,p,a,table,textarea,form,input,img,ul,li,dl,dt,dd,h1,h2,h3,h4{margin:0;padding:0;font-size:100%;font-weight:300;}
+a,a:visited{cursor:pointer;text-decoration:none;}
+.fl{float:left;}
+.fr{float:right;}
+.lazy {width: 100%; max-width: 100%; height: auto;}
+.content:after {content:'\20'; display:block; height:0; clear:both;}
+/*slider*/
+.mobile_banner {margin-bottom: 10px; width: 100%; height: auto;}
+body{width:640px;margin: 0 auto;background-color: #f5f5f5;padding-bottom: 100px;}
+#top_bar{width:640px;height:65px;min-height: 0;overflow: hidden;background-color: #fff}
+.location{width:140px;height:65px;line-height: 65px;text-align: center;	font-size: 20px;text-indent: 10px;background:url('/static/img/11.png') no-repeat center left 15px;background-size: auto 40px}
+.search{width:400px;height:45px;margin-top: 10px;background:url('/static/img/m2.jpg') no-repeat center bottom;background-size: 400px auto}
+.search input{line-height: 45px;height:40px;margin-left: 5px;width:350px;border:none;font-size: 20px;}
+.s_btn{width:40px;height:40px;display: block;float: right;}
+.mobile_banner{height: 400px;overflow: hidden;background-color: #fff}
+.nav{height:300px;background:url('/static/img/nav-bg.jpg') no-repeat center #fff;background-size: 100% auto;margin-top: 10px;}
+.nav ul li{width:160px;height:140px;float: left;}
+.nav ul li a{display: block;padding-top: 100px;font-size: 20px;line-height: 30px;text-align: center;color: #555}
+.toutiao{height:72px;background:url('/static/img/toutiao.jpg') no-repeat center left 30px #fff;background-size: auto 50px;padding-left: 220px;margin-top: 10px;margin-bottom: 10px;}
+.toutiao a{font-size: 20px;line-height: 72px;color:#333;}
+#fix_menu{position:fixed;bottom:0;left:50%;width:640px;margin-left: -320px;height:80px;background-color: #fff;border-top:1px solid #aed13f;}
+#fix_menu ul li{width:160px;text-align: center;font-size: 20px;float: left;}
+#fix_menu ul li a{display: block;color:#333;}
+#fix_menu ul li.sel a{color:#aed13f;}
+.ico{display: block;margin:0 auto;height:30px;padding-top: 10px;margin-bottom: 5px;}

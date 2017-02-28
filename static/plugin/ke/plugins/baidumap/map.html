@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Baidu Maps</title>
+		<style>
+			html { height: 100% }
+			body { height: 100%; margin: 0; padding: 0; background-color: #FFF }
+		</style>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Ujt57aQupvUnOqQ6FLMxKG2I"></script>
+		<script>
+			var map, geocoder;
+			function initialize() {
+				map = new BMap.Map('map_canvas');
+				var point = new BMap.Point(121.473704, 31.230393);
+				map.centerAndZoom(point, 11);
+				map.addControl(new BMap.NavigationControl());
+				map.enableScrollWheelZoom();
+
+				var marker = new BMap.Marker(point);
+				map.addOverlay(marker);
+				map.addEventListener("zoomend", function(){
+					map.setCenter(marker.point);
+				}); 
+				marker.enableDragging();
+				marker.addEventListener('dragend', function(e){
+					//$('#mapdata').val(e.point.lng + ',' + e.point.lat+ ','+map.getZoom());
+					map.setCenter(e.point);
+				});
+				map.addEventListener("dragend", function(){
+					var center=map.getCenter();
+					marker.setPosition(center);
+				}); 
+				var gc = new BMap.Geocoder();
+				gc.getLocation(point, function(rs){
+					var addComp = rs.addressComponents;
+					var address = [addComp.city].join('');
+					parent.document.getElementById("kindeditor_plugin_map_address").value = address;
+				});
+			}
+
+			function search(address) {
+				if (!map) return;
+				var local = new BMap.LocalSearch(map, {
+					renderOptions: {
+						map: map,
+						autoViewport: true,
+						selectFirstResult: false
+					}
+				});
+				local.search(address);
+			}
+		</script>
+	</head>
+	<body onload="initialize();">
+		<div id="map_canvas" style="width:100%; height:100%"></div>
+	</body>
+</html>

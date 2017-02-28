@@ -1,0 +1,110 @@
+/*base*/
+.cont_div{width:1000px;margin:0 auto;overflow:hidden}
+/*  */
+.fl{float:left;}
+.fr{float:right;}
+.clearfix{overflow:auto; _height:1%;}
+.comwidth{width:1200px;min-height:0;overflow:hidden;margin:0 auto;}
+.db {display:block;}
+/* 喜庆盒首页内容*/
+#banner_inner {width:752px;height:429px;overflow:hidden;float:left;position:relative; left:0px;top:0px;z-index:2;}
+#banner_inner ul {width:100%;height:100%;overflow:hidden;}
+#banner_inner ul li img{width:752px;height:429px;}
+#banner_inner ul li{float:left;}
+#banner_inner .num { overflow:hidden; height: 25px; position: absolute; bottom:12px; left: 15px; zoom:1; z-index:3; }
+#banner_inner .num li { width: 25px; height: 25px; line-height: 25px; text-align: center; font-weight: 400;  color: #FFFFFF; background: #444444; margin-right: 10px; border-radius:50%; cursor:pointer; float: left; }
+ 
+/* shop one */
+.shop_bar_top {margin-top:6px;line-height:66px;border-bottom:1px solid #973F55;background:url('/static/img/xqh/yi.png') no-repeat left center;}
+.shop_bar_top h3 i{display:inline-block;padding-right:20px; color:#fff;margin-left:5px;font-size:18px;}
+.shop_bar_top h3 {font-size:20px;float:left;color:#323234; }
+.shop_bar_top h3 span {color:#CFCFCF;font-style:oblique;}
+.shop_bar_top a {font-size:14px;float:right;;padding-right:20px; color:#757575;font-family:'宋体';}
+.shop_bar_top a:hover {color:#ff0e41;}
+.shop_bar .bar .one{width:219px; height:359px;border-right:1px solid #fff; position:relative;overflow:hidden;} 
+
+
+#banner_inner .num li.on { background: #FF7700;} 
+#banner_inner .prev,#banner_inner .next { display: none; width: 40px; height: 100px; background:url(http://qysc.7192.com/static/img/wap/btn.png) no-repeat; position: absolute; top: 115px;}
+#banner_inner .prev { left: 0; }
+#banner_inner .next { right: 0; background-position: right; }  
+
+.main_right{padding-left:15px;width:223px;height:429px;background-color:#fff;}
+.main_right a {color:#757575;}
+.main_right01{color:#ff0e41;}
+
+.main_right_top{height:43px;line-height:43px;border-bottom:1px solid #EDEDED;}
+.main_right_top h3 {font-size:15px;float:left;min-width:5px;color:#757575;}
+.main_right_top a {float:right;padding-right:3px;color:#757575;font-family:'宋体';}
+.main_right_bottom  {line-height:26px;font-size:12px;padding-top:8px;} 
+/* 下拉隐藏菜单开始*/
+.shop_bar .bar .bar_hover {position:absolute;top:246px;z-index:11;width:207px;height:114px;padding-top:13px;padding-left:13px;transition:all 1s linear;background-color:rgba(225,225,225,0.6);display:none;}
+.shop_bar .bar .bar_hover ul li{font-size:14px;color:#615C63;line-height:28px;float:left;margin-bottom:20px;padding-left:32px;width:34%;}
+.shop_bar .bar .bar_hover ul li{background:url('/static/img/xqh/under_tp_06.png') no-repeat 0px center;}/*  �б�ǰ��ͼƬ*/
+/* 下拉隐藏菜单结束 */
+.bar .one {position:absolute;z-index:2;}
+.bar .one img {width:100%;}
+.shop_bar .bar .one:hover .bar_hover { };
+.bar_hover_1 {top:246px;background-color:rgba(225,225,225,0.6);};
+.shop_bar .bar .one img {width:100%;position:absolute;z-index:2;}/* width:220px; height:359px; */
+.shop_bar .bar .two {width:317px;height:359px;border:1px solid #efefef; border-top:none;}
+.shop_bar .bar .two img {width:317px;height:359px;}
+.shop_bar_img{padding:14px 20px 0px 20px;height:165px;width:179px;border-right:1px solid #efefef;border-bottom:1px solid #efefef;
+line-height:22px;}
+.shop_bar_img img {width:179px;height:132px;}
+.shop_bar_img span {color:red;}
+.bar .four .shop_bar_onlyimg {width:171px;height:349px;padding:10px 24px 0px 24px;text-align:center;
+border-right:1px solid #efefef;border-bottom:1px solid #efefef;}
+.shop_bar_onlyimg span {color:red;}
+.shop_bar_onlyimg img {width:171px;height:267px;}
+.shop_bar_onlyimg h3  {font-size:14px;margin-top:20px;}
+.shop_bar_onlyimg h3 a {font-size:14px;color:black;}
+.shop_bar_onlyimg p {font-size:12px;color:#898987;line-height:22px;}
+/* shop two */
+.bar2 {height:414px;}
+.bone {width:326px;height:414px;border-right:1px solid white;border-bottom:1px solid #efefef; overflow:hidden;position:relative;}
+.bone img {position:absolute;z-index:2;width:100%;}
+/* 下拉隐藏菜单开始*/
+.barone_hover {position:absolute;top:264px;z-index:11;width:100%;height:150px;padding-top:17px;padding-left:30px; transition:all 1s linear;display:none;}
+.barone_hover ul li{font-size:14px;color:#615C63;line-height:26px;float:left;margin-bottom:18px;padding-left:32px;width:39%;}
+.barone_hover ul li{background:url('/static/img/xqh/under_tp_06.png') no-repeat 0px center;}/*  �б�ǰ��ͼƬ*/
+.bone:hover .barone_hover {top:264px;background-color:rgba(225,225,225,0.6);}
+/* 下拉隐藏菜单结束 */
+.bar2_top {width:873px;height:234px;}
+.bar2_top .topl {width:434px;height:234px;overflow:hidden;cursor:pointer}
+.bar2_top .topl img {width:100%;}
+.rightarea {width:439px;overflow:hidden;float:left;}
+.bar2_top .topr { width:218px;height:116px;cursor:pointer }
+.bar2_top .topr,.bar_3_two,.bar4 .rone {border-bottom:1px solid #efefef;border-right:1px solid #efefef;}
+.topr img {width:211px;height:105px;}
+.bar2_bo{width:872px;min-height:0;overflow:hidden;float:left;}
+.bar2_bo .shop_bar_img {padding:14px 19px 0px 19px}
+.ce2 {margin-top:17px;}
+.ce3 {margin-top:24px;}
+.ce4{margin-top:3px;}
+.ce5 {margin-top:15px;}
+.ce6 {margin-top:16px;}
+/* shop three */
+.bar_3 {width:979px;}
+.bar_3 .one img {width:100%;}/* width:220px;height:359px; */
+.bar_3 .b {border-left:1px solid #efefef;}
+.bar_3_two {width:317px;height:179px;}
+.bar_text{width:123px;padding-left:30px;margin-top:58px; line-height:27px;}
+.bar_text p {color:#9B9B9B;margin-bottom:15px;}
+.bar_text h3 {color:black;text-align:center;}
+.bar_text a{color:white;background-color:#FD453B;padding:5px 8px;}
+.bar_img {margin-top:28px;margin-right:19px;}
+.bar_img img {width:112px; }
+/* shop four */
+.bar4 {height:414px;}
+.bar4_l{height:100%;width:324px;position:relative;overflow:hidden;}
+.bar4_l img {width:100%;position:absolute;z-index:2;}/* width:324px;height:100%; */
+/* 下拉隐藏菜单开始 */
+.bar4_l ul {width:100%;height:163px;;line-height:45px;padding-left:24px;font-size:14px;position:absolute;top:252px;z-index:11;transition:all 1s linear;}
+.bar4_l ul li {background:url('/static/img/xqh/under_tp_06.png') no-repeat left center;text-indent:2px;}
+.bar4_l ul li{float:left;width:22%;padding-left:28px;}
+/* 下拉隐藏菜单结束 */
+.bar4_l:hover ul {top:252px;background-color:rgba(225,225,225,0.6);}
+.bar4_r {height:100%;width:876px;overflow:hidden;}
+.bar4 .rone {width:185px;height:185px; margin:0 auto;margin-top:10px;}
+.bar4 .ronebox{width:218px;height:206px;float:left;border-right:1px solid #efefef;border-bottom:1px solid #efefef;}

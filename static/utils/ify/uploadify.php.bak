@@ -1,0 +1,107 @@
+<?php
+define('CHARSET','gbk');
+define('UPATH','D:/wwwroot/static/xp/');
+define('STATIC_URL','http://static.7192.com/xp/');
+require('D:/wwwroot/cloud/include/class_config.php');
+require('D:/wwwroot/cloud/include/config_poco.php');
+require('D:/wwwroot/cloud/include/class_string.php');
+require('D:/wwwroot/cloud/include/class_mysql.php');
+require('D:/wwwroot/cloud/include/image.func.php');
+
+$sid = $_POST['sid'];
+if(empty($sid)){
+    unlink($_FILES['Filedata']['tmp_name']);
+    die('uid');
+}else{
+    $info = StringExt::decode($sid,'xpxt');
+    if(empty($info) || strpos($info,'-')===false){
+        unlink($_FILES['Filedata']['tmp_name']);
+        die('uid');
+    }else{
+        list($uid,$cid, $time) = explode('-', $info);
+    }
+}
+
+if(!$uid){
+    unlink($_FILES['Filedata']['tmp_name']);
+    die('uid');
+}
+
+$cid = intval($cid);
+
+if(!$cid){
+    unlink($_FILES['Filedata']['tmp_name']);
+    die('cid');
+}
+
+$cupath = $uid.'/'.$cid.'/';
+$targetPath = UPATH.$cupath;
+
+
+if (!empty($_FILES)) {
+    if(!file_exists($targetPath)){
+        mkdir($targetPath,0777,true) or die('dir');
+    }
+    $oname = $_FILES['Filedata']['name'];
+    $ssoname = @iconv('UTF-8','GBK',$oname);
+    $ssoname = htmlspecialchars($ssoname);
+    $ssoname = str_replace(array('%','"',"'"),'',$ssoname);
+    if(empty($ssoname)){
+        $ssoname = $ssoname;
+    }
+    $db = new Mysql(config::get('db'));
+
+    $config = $db->findAll('SELECT `name`,`value` FROM `web_db`.`web_plugin_config` WHERE `userid`='.$uid.' AND `plugin`=\'xp\'','name');
+    $markOpen = !empty($config['markopen']['value']);
+    $markText = empty($config['marktext']['value']) ? '全影在线选片系统' : trim($config['marktext']['value']);
+    $markPos = intval($config['markpos']['value']);
+    $markPos = $markPos ? $markPos : 5;
+    $markTextColor = empty($config['markcolor']['value']) ? '#ffffff' : trim($config['markcolor']['value']);
+    $markFontSize = intval($config['markfsize']['value']);
+    $markFontSize = $markFontSize ? min(max(12,$markFontSize),60) : 24;
+    $markAlpha = intval($config['markalpha']['value']);
+    $markAlpha = $markAlpha ? ceil($markAlpha/100*127) : 46;
+    $markAlpha = 100-$markAlpha;
+
+    $r=$db->findRow("SELECT `id` FROM `web_db`.`web_plugin_xp_photos` WHERE `siteuserid`={$uid} AND `cmid`={$cid} AND `oname`='{$ssoname}'");
+    empty($r) or die('has');
+    $pathinfo = pathinfo($oname);
+    $oname = htmlspecialchars($pathinfo['basename']);
+    $ext = strtolower(end(explode('.',$oname)));
+    $nname = date('His').StringExt::rand(8,2).'.'.$ext;
+
+	$targetFile = rtrim($targetPath,'/') . '/' . $_FILES['Filedata']['name'];
+	$fileTypes = array('jpg','jpeg');
+	
+	if (in_array($ext,$fileTypes)) {
+		if(move_uploaded_file($_FILES['Filedata']['tmp_name'], $targetPath.$nname)){
+            list($width,$height,,) = getimagesize($targetPath.$nname);
+            
+            createThumb($targetPath.$nname,200,200);
+            reSaveImage($targetPath.$nname);
+            if($markOpen){
+                imageWaterMark($targetPath.$nname,
+                                $markPos,
+                                '',
+                                $markText,
+                                $markFontSize,
+                                $markTextColor,
+                                $markAlpha);
+            }
+
+            $id = $db->insert('web_db.web_plugin_xp_photos',array(
+                'siteuserid'=>$uid,
+                'cmid'=>$cid,
+                'oname'=>$ssoname,
+                'path'=>$cupath.$nname,
+                'width'=>$width,
+                'height'=>$height,
+                'time'=>$time
+            ),true);
+        }
+		echo 'ok|'.$id.'|'.$cupath.$nname.'|'.$oname;
+	} else {
+		echo 'type';
+	}
+}
+?>

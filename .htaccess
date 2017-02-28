@@ -1,0 +1,15 @@
+<IFMODULE mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^([a-z]+).html$ ?m=wxsit&mod=$1 [QSA,L]
+RewriteRule ^([0-9]+)$ ?m=wxsit&mod=shop&uid=$1 [QSA,L]
+RewriteRule ^list/([0-9]+).html$ ?m=wxsit&mod=list&cateid=$1 [QSA,L]
+RewriteRule ^show/([0-9]+).html$ ?m=wxsit&mod=show&id=$1 [QSA,L]
+RewriteRule ^shop/([0-9]+).html$ ?m=wxsit&mod=shop&id=$1 [QSA,L]
+RewriteRule ^([0-9]+)/([a-z]+)/([0-9]+).html$ ?m=wxsit&mod=$2&uid=$1&cid=$3 [QSA,L]
+RewriteRule ^([a-z]+)_([0-9]+).html$ ?m=wxsit&mod=$1&id=$2 [QSA,L]
+RewriteRule ^([a-z]+)_([a-z]+)_([0-9]+).html$ ?m=wxsit&mod=$1&c=$2&id=$2 [QSA,L]
+RewriteRule ^order/([0-9]+).html$ ?m=wxsit&mod=order&id=$1 [QSA,L]
+RewriteRule ^news/([0-9]+).html$ ?m=wxsit&mod=news&id=$1 [QSA,L]
+RewriteRule ^home/([a-z]+).html$ ?m=admin&a=$1 [QSA,L]
+</IFMODULE>
